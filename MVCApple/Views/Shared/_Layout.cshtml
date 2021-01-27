@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 我的蘋果商店</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="bg-light vh-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        @Html.ActionLink("Apple Store", "Index", "Home", new { area = "" }, new { @class = "navbar-brand text-white" })
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon text-white"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">@Html.ActionLink("Mac", "Index", new {Controller ="Mac" }, new { @class = "nav-link text-white" })</li>
+                <li class="nav-item">@Html.ActionLink("iPad", "Index", new { Controller = "Pad" }, new { @class = "nav-link text-white" })</li>
+                <li class="nav-item">@Html.ActionLink("iPhone", "Index", new { Controller = "Phone" }, new { @class = "nav-link text-white" })</li>
+                <li class="nav-item">@Html.ActionLink("Apple Watch", "Index", new { Controller = "Watch" }, new { @class = "nav-link text-white" })</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - 我的蘋果商店</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

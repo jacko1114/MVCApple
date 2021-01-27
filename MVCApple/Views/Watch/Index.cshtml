@@ -1,0 +1,22 @@
+﻿@using System.Web.Configuration
+@{
+    ViewBag.Title = "Apple watch";
+    string imagePath = WebConfigurationManager.AppSettings["ImagePath"];
+}
+
+<h2 class="py-3">@ViewBag.productName</h2>
+
+<div class="card mb-3 text-white bg-dark" style="max-width: 540px;">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img src="~/@imagePath/@ViewBag.url" alt="watch" class="w-100" />
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h3 class="card-title">@ViewBag.productName</h3>
+                <p class="card-text">NT$ @ViewBag.price</p>
+                <a href="#" class="btn btn-primary float-right mb-2">加入購物車</a>
+            </div>
+        </div>
+    </div>
+</div>
