@@ -24,6 +24,8 @@ namespace MVCApple
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css"));
+
+            BundleTable.EnableOptimizations = true;
         }
     }
 }
